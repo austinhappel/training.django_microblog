@@ -1,12 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from taggit.managers import TaggableManager
+
 
 class Entry(models.Model):
     title = models.CharField(max_length=128)
     text = models.TextField()
     author = models.ForeignKey(User)
     pub_date = models.DateTimeField()
+    tags = TaggableManager()
 
     class Meta:
         ordering = ['-pub_date', ]
