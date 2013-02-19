@@ -11,6 +11,17 @@
       <div class="entry-body">
       {{ entry.text }}
       </div>
+      <div class="entry-tags">
+        {% if entry.tags|length > 0 %}
+        <h3>tags:</h3>
+        <ul>
+          {% for tag in entry.tags.all %}
+          <li>{{ tag }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+
     </div>
   </li>
   {% endfor %}
