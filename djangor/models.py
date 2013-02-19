@@ -9,7 +9,7 @@ class Entry(models.Model):
     text = models.TextField()
     author = models.ForeignKey(User)
     pub_date = models.DateTimeField()
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
 
     class Meta:
         ordering = ['-pub_date', ]
