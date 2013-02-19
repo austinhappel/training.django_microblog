@@ -32,6 +32,9 @@ def deploy(extras=''):
     # collectstatic
     collectstatic()
 
+    # touch wsgi
+    touch_WSGI()
+
 
 def rsync(extras=''):
     """
@@ -44,6 +47,13 @@ def rsync(extras=''):
         exclude=env.excluded + ['fabfile.py', '.*', '*.pyc', '*.iml', '*~'],
         extra_opts='--archive --update ' + extras,
     )
+
+
+def touch_WSGI():
+    """
+    Touches the wsgi file to trigger a refresh of the site
+    """
+    run('touch ' + env.webapp_path + 'site_config/production-django.wsgi')
 
 
 @runs_once
