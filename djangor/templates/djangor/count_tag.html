@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Tag Cloud</h1>
+{% for tag in tagcloud %}
+  <div class="tag">
+  <h3>{{ tag.tagname }} {{ tag.count }}</h3>
+{% endfor %}
+{% endblock %}
