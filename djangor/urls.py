@@ -26,4 +26,5 @@ urlpatterns = patterns('',
         )),
         name="add_entry"),
     url(r'tag/(.*)', 'djangor.views.tag_search'),
+    url(r'^tag/$', 'djangor.views.count_tag', name="count_tag"),
 )
