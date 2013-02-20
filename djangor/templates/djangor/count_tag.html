@@ -2,8 +2,9 @@
 
 {% block content %}
 <h1>Tag Cloud</h1>
-{% for tag in tagcloud %}
-  <div class="tag">
-  <h3>{{ tag.tagname }} {{ tag.count }}</h3>
-{% endfor %}
+<ul>
+    {% for tag in tagcloud %}
+      <li><a href="/tag/{{ tag.tagname }}">{{ tag.tagname }}: {{ tag.count }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}
