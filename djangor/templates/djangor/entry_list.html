@@ -16,7 +16,7 @@
         <h3>tags:</h3>
         <ul>
           {% for tag in entry.tags.all %}
-          <li>{{ tag }}</li>
+          <li><a href="/tag/{{ tag }}">{{ tag }}</a></li>
           {% endfor %}
         </ul>
         {% endif %}
